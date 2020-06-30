@@ -94,10 +94,10 @@ print(stuff)
 
 
 # want to skip uninteresting lines
-for line in something
-    if not line.startswith('something')
-        continue
-    print(line)
+#for line in something
+#    if not line.startswith('something')
+#        continue
+#    print(line)
 
 # lists
 print([5, 7, 3, 4])
@@ -123,13 +123,13 @@ t[1:3]
 t[:4]
 t[5:]
 
-#can add elements using append function
-stuff = lists()
+# can add elements using append function
+stuff = ()
 stuff.append('book')
 stuff.append(99)
 stuff.append('cookie')
 
-#>>9 in t (in python console)
+# >>9 in t (in python console)
 t.sort()
 
 abc = 'With three words'
