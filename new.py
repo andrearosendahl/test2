@@ -2,6 +2,8 @@ fruit = 'banana'
 letter = fruit[1]
 print(letter)
 
+print('hi')
+
 print(fruit[0])
 x = 3
 w = fruit[x-1]
@@ -98,7 +100,7 @@ for line in something
     print(line)
 
 # lists
-print([1, 2, 3, 4])
+print([5, 7, 3, 4])
 print([1, [2, 3], 4]) # a list that includes another list
 print([])
 #lists are mutable, while strings are not
