@@ -139,9 +139,98 @@ print(len(stuff))
 for w in stuff:
     print(w)
 
-#double split pattern
+# double split pattern
 line = 'From an email@email.com saturday'
 words = line.split()
 email = words[1]
 pieces = email.split('@')
 print(pieces[1])
+
+
+# Dictionaries
+purse = dict()
+purse['money'] = 12
+purse['candy'] = 3
+purse['tissues'] = 5
+print(purse)  # order of the dictionary is unsorted, random
+
+jjj = {'letter' : 3, 'number' : 3, 'word' : 1}
+list(jjj)
+jjj.keys()
+jjj.values()
+jjj.items()
+for aaa, bbb in jjj.items():
+    print(aaa, bbb)
+
+ccc = dict()
+ccc['csev'] = 1
+ccc['cwen'] = 1
+ccc['cwen'] = ccc['cwen'] + 1
+print(ccc)
+
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zquian', 'cwen']
+for name in names:
+    if name not in counts:
+        counts[name] = 1
+    else:
+        counts[name] = counts[name] + 1
+print(counts)
+for name in names:
+    counts[name] = counts.get(name, 0) + 1
+print(counts)
+
+counts = dict()
+line = input('')
+words = line.split()
+for word in words:
+    counts[word] = counts.get(word,0) + 1
+print(counts)
+
+name = input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+
+counts = dict()
+for line in handle:
+    line = line.rstrip()
+    if not line.startswith('From '):
+        continue
+    words = line.split()
+    email = words[1]
+    counts[email] = counts.get(email,0) + 1
+
+biggestemail = None
+biggestcount = None
+for email,count in counts.items():
+    if biggestcount is None or count > biggestcount:
+        biggestcount = count
+        biggestemail = email
+
+print(biggestemail, biggestcount)
+
+(x, y) = (4, 'fred')
+print(y)
+
+d = dict()
+d['csev'] = 2
+d['cwen'] = 4
+for (k,v) in d.items():
+    print(k,v)
+tups = d.items()
+print(tups)
+
+# sorting by keys
+d = {'a' : 2, 'b' : 3, 'c' : 1}
+t = sorted(d.items())
+print(t)
+
+# sorting by values
+tmp = list()
+for k, v in d.items():
+    tmp.append((v, k))
+print(tmp)
+tmp = sorted(tmp, reverse=True)
+print(tmp)
+
+print(sorted([(v, k) for k, v in d.items()]))
